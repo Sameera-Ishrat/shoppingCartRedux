@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import Products from "./components/Products";
+import { useDispatch, useSelector } from "react-redux";
+import { calculateTotal, fetchProducts } from "./features/products/productSlice";
+import "./index.css";
+import Navbar from "./components/Navbar";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+import ProductDetails from "./components/ProductDetails";
+import Home from "./components/Home";
+import Modal from "./components/Modal";
 
 function App() {
+  const dispatch = useDispatch();
+  const { isLoading,products } = useSelector((state) => state.product);
+const {isCartVisible} = useSelector((state) => state.modal);
+
+useEffect(() => {
+dispatch(calculateTotal());
+},[dispatch,products])
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <h1>Loading....</h1>;
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <BrowserRouter>
+      <Navbar/>
+      <Routes >
+        <Route path="/" element = {<Home />} />
+        <Route path="/products" element={<Products/>} />
+        <Route path="/products/:productId" element = {<ProductDetails />} />
+      </Routes>
+      </BrowserRouter>
+      {/* <Products /> */}
+    
+      {isCartVisible && <Modal />}
     </div>
   );
 }
