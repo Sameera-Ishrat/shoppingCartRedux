@@ -213,3 +213,17 @@ h3 {
     gap: 1rem;
     padding: 1rem;
   }
+  .search-input {
+    padding: 0.5rem 5rem;
+    width: 30rem;
+    outline: none;
+  }
+  .search-message {
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    color: red;
+  }
