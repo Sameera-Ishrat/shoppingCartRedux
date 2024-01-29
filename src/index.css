@@ -11,11 +11,11 @@ body {
   font-size: 16px;
 }
 a {
-    text-decoration: none;
-    color: chocolate;
+  text-decoration: none;
+  color: chocolate;
 }
 .logo {
-    counter-reset: #888;
+  counter-reset: #888;
 }
 h1 {
   padding-bottom: 1rem;
@@ -60,9 +60,9 @@ h3 {
   left: 0;
   width: 100%;
   min-height: 52px;
-    height: 52px;
-    background-color: #333;
-    border: 1px solid #333;
+  height: 52px;
+  background-color: #333;
+  border: 1px solid #333;
 }
 .navbar svg {
   color: #fff;
@@ -131,9 +131,9 @@ h3 {
   margin-bottom: 1rem;
 }
 .cart {
-    cursor: pointer;
+  cursor: pointer;
 }
- .modal-container {
+.modal-container {
   width: 100%;
   height: 100%;
   z-index: 10;
@@ -147,83 +147,90 @@ h3 {
 }
 
 .cart-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    width: 90vw;
-    max-width: 40rem;
-    max-height: 70vh; /* Adjust the max height as needed */
-    overflow-y: auto; /* Add this line for the scrollbar */
-  }
-  
-  .cart-modal ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .cart-modal li {
-    margin-bottom: 10px;
-  }
-  .btn-close {
-    position: fixed;
-    top: 1rem;
-    right: 0;
-    width: 3rem;
-    background: transparent;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  .amount {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .qty,.total {
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .qty-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-  }
-  .cart-image {
-    width: 2rem;
-    height: 2rem;
-    
-  }
-  .cart-image img {
-    width: 100%;
-    object-fit: cover;
-  }
-  .image-details {
-    /* display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 90vw;
+  max-width: 40rem;
+  max-height: 70vh; /* Adjust the max height as needed */
+  overflow-y: auto; /* Add this line for the scrollbar */
+}
+
+.cart-modal ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-modal li {
+  margin-bottom: 10px;
+}
+.btn-close {
+  position: fixed;
+  top: 1rem;
+  right: 0;
+  width: 3rem;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qty,
+.total {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+.qty-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.cart-image {
+  width: 2rem;
+  height: 2rem;
+}
+.cart-image img {
+  width: 100%;
+  object-fit: cover;
+}
+.image-details {
+  /* display: flex;
     justify-content: flex-start;
     gap: 1rem; */
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  .search-input {
-    padding: 0.5rem 5rem;
-    width: 30rem;
-    outline: none;
-  }
-  .search-message {
-    font-size: 2rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90vw;
-    color: red;
-  }
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+.search-input {
+  padding: 0.5rem 5rem;
+  width: 30rem;
+  outline: none;
+}
+.search-message {
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  color: red;
+}
+.footer {
+  height: 3rem;
+  background-color: #333;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+}
