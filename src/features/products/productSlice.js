@@ -3,17 +3,18 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
-  async () => {
+  async (_,thunkAPI) => {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
       if (!response.ok) {
-        throw new Error(`Something went erong! ${response}`);
+        throw new Error(`Something went wrong! ${response}`);
       }
       const data = await response.json();
       console.log(data);
       return data;
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      //console.error(e);
+      return thunkAPI.rejectWithValue({error:error.message});
     }
   }
 );
@@ -87,6 +88,7 @@ state.isLoading = false;
 state.products = action.payload.map(product => ({ ...product, amount: 0 }));
     })
     .addCase(fetchProducts.rejected,(state,action) =>{
+      console.log(action);
 state.isLoading = false;
 console.log("Error fetching data",action.errorMessage);
     })
