@@ -50,7 +50,7 @@ cb(...arg);
       />
       <div className="cart" onClick={() => dispatch(toggleCartVisibility())}>
         <CartIcon />
-        <div className="badge">{amount}</div>
+       {amount > 0 && <div className="badge">{amount}</div> } 
       </div>
     </nav>
   );
