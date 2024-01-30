@@ -49,7 +49,8 @@ const Modal = () => {
                         <img src={item.image} alt={item.title} />
                             </div>
                         
-                      <h3>{item.title}</h3>
+                      {/* <h3>{item.title}</h3> */}
+                      <h3>{item.title.length >30 ? item.title.slice(0,27)+"..." : item.title}</h3>
                       <p className="price">${(item.price*item.amount).toFixed(2)}</p>
                         </div>
                         

@@ -8,6 +8,7 @@ import Home from "./Home";
 
 const ProductDetails = () => {
   const { productId } = useParams();
+  console.log(useParams(), "useParams");
 
   const dispatch = useDispatch();
 
@@ -15,11 +16,14 @@ const ProductDetails = () => {
 
   console.log(products, "My products");
 
-  const selectedProduct = products.find((product) => product.id === +productId); // remember to convert it to a number
+  const selectedProduct = products.find(
+    (product) => product.id === parseInt(productId)
+  ); // remember to convert it to a number
 
   //   if (!selectedProduct) {
   //     return <h1>No products found</h1>;
   //   }
+  console.log(selectedProduct,"selected products")
   if (!selectedProduct) {
     // Check if the products array is empty
     if (products.length === 0) {
