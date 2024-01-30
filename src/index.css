@@ -234,3 +234,19 @@ h3 {
   color: #fff;
   padding: 1rem;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  padding: 5rem;
+}
+.btn-error{
+  padding: 0.5rem 1rem;
+  background-color: chocolate;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  color: #fff;
+}
