@@ -26,11 +26,10 @@ const ProductDetails = () => {
   console.log(selectedProduct,"selected products")
   if (!selectedProduct) {
     // Check if the products array is empty
-    if (products.length === 0) {
-      return <h1>No products available</h1>; // or render a different component/message
-    }
-    // return <h1>No matching product found</h1>;
-    return <Home />;
+    // if (products.length === 0) {
+    //   return <div className="center">No matching product found</div>; // or render a different component/message
+    // }
+    return <div className="center">No matching product found</div>;
   }
 
   const { id, title, price, description, image } = selectedProduct;

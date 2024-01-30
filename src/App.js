@@ -42,8 +42,8 @@ function App() {
           </Route>
           <Route path="*" element={<Error />} />
         </Routes>
+        {isCartVisible && <Modal />}
       </BrowserRouter>
-      {isCartVisible && <Modal />}
     </div>
   );
 }

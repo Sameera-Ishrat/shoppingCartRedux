@@ -3,14 +3,17 @@ import { useSelector, useDispatch } from "react-redux";
 import { onCloseModal } from "../features/modal/modalSlice";
 import { addItem, removeItem } from "../features/products/productSlice";
 import { ChevronDown, ChevronUp } from "../icons";
+import { useNavigate } from "react-router";
 
 const Modal = () => {
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   const cartItems = useSelector((state) =>
     state.product.products.filter((product) => product.amount > 0)
   );
-  const { total, id, amount,image } = useSelector((state) => state.product);
+  const { total} = useSelector((state) => state.product);
 
   const increaseItemHandler = (id) => {
     dispatch(addItem({ id }));
@@ -23,14 +26,19 @@ const Modal = () => {
   const stopPropagation = (e) => {
     e.stopPropagation();
   };
+
+  const closeModalAndRedirect = () => {
+dispatch(onCloseModal());
+navigate("/");// Redirect to the home page
+  }
   return (
-    <div className="modal-container" onClick={() => dispatch(onCloseModal())}>
+    <div className="modal-container" onClick={() =>(cartItems.length === 0 ? closeModalAndRedirect() : dispatch(onCloseModal()) )}>
       <div className=" cart-modal">
         <div className="modal" onClick={(e) => stopPropagation(e)}>
           <div>
             <h2>Your cart</h2>
             <button
-              onClick={() => dispatch(onCloseModal())}
+              onClick={() =>(cartItems.length === 0 ? closeModalAndRedirect() :dispatch(onCloseModal() ) )}
               className="btn-close"
             >
               X
