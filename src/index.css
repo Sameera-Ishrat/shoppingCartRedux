@@ -8,7 +8,11 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0rem auto;
   background-color: #fff;
-  font-size: 16px;
+  /* font-size: 16px; */
+  font-size: 1rem;
+}
+html {
+  font-size: 100%;
 }
 a {
   text-decoration: none;
@@ -21,8 +25,13 @@ h1 {
   padding-bottom: 1rem;
   font-size: 3rem;
 }
-h2,
+h2{
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
 h3 {
+  font-size: 1rem;
   padding-bottom: 1rem;
 }
 .price {
@@ -36,6 +45,7 @@ h3 {
 } */
 .product-image {
   width: 10rem;
+  max-width: 10rem; /* Use max-width for responsiveness */
   height: 10rem;
 }
 .product-image img {
@@ -249,4 +259,117 @@ h3 {
   cursor: pointer;
   border-radius: 20px;
   color: #fff;
+}
+
+/**************** Responsive Layout ********************************/
+/* Adjust font size for larger screens */
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 110%; /* Increase font size by 10% */
+  }
+}
+/* Adjust font size for medium-sized screens */
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 100%; /* Reset font size to default for medium-sized screens */
+  }
+}
+
+/* Styles for medium-sized screens */
+@media screen and (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  .products-container {
+    gap: 5rem;
+    padding: 5rem;
+}
+}
+
+/* Styles for smaller screens */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 90%; /* Decrease font size by 10% for smaller screens */
+  }
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+  .navbar {
+    padding: 1rem;
+  }
+  .products-container {
+    gap: 5rem;
+    padding: 5rem;
+}
+.search-input {
+  width: auto;
+}
+}
+
+/* Styles for even smaller screens */
+@media screen and (max-width: 480px) {
+  .products-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+  .product-image {
+    width: 5rem;
+    max-width: 5rem;
+  }
+  .products-container {
+    padding: 4rem;
+  }
+  .product-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+.search-input {
+  width: auto;
+  padding: 0;
+}
+.navbar svg {
+  width: 2rem;
+}
+.product-details-container {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+.product-details-container img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin: 0 auto;
+}
 }
