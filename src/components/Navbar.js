@@ -1,5 +1,5 @@
 import React from "react";
-import { CartIcon } from "../icons";
+import { CartIcon, FavoritesIcon } from "../icons";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleCartVisibility } from "../features/modal/modalSlice";
 import { Link } from "react-router-dom";
@@ -48,6 +48,7 @@ cb(...arg);
         value={searchTerm}
         onChange={(e) => handleSearchInputChange(e.target.value)}
       />
+     <Link to="/favorites"><FavoritesIcon /></Link> 
       <div className="cart" onClick={() => dispatch(toggleCartVisibility())}>
         <CartIcon />
        {amount > 0 && <div className="badge">{amount}</div> } 
