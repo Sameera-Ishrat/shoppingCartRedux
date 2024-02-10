@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import Modal from "./components/Modal";
 import SharedComponent from "./components/SharedComponent";
 import Error from "./components/Error";
+import Favorites from "./components/Favorites";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ function App() {
             <Route path="/products/:productId" element={<ProductDetails />} />
           </Route>
           <Route path="*" element={<Error />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
         {isCartVisible && <Modal />}
       </BrowserRouter>
