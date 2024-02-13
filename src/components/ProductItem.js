@@ -8,10 +8,10 @@ import {FavoritesIcon} from "../icons";
 // const ProductItem = ({ id, title, image, price, description,amount ,product}) => {
   const ProductItem = (product) => {  
 const dispatch = useDispatch();
-  const isClicked = useSelector((state) => state.favorites.isClicked[product.id])
+  const isClicked = useSelector((state) => state.favorites.isClicked[product.id] || false)
 
 const handleFavorites = () => {
-  dispatch(toggleClicked(product));
+  dispatch(toggleClicked({id:product.id}));
   if (isClicked) {
     // If already in favorites, remove it
     dispatch(removeFavorite(product));

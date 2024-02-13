@@ -12,7 +12,7 @@ const favoriteSlice = createSlice({
     addToFavorites: (state, action) => {
       const id = action.payload;
       state.favorites.push(action.payload);
-      state.isClicked[id] = false; // Initialize isClicked to false for each new product
+      state.isClicked[id] = true; // Initialize isClicked to true for each new product
     },
     removeFavorite: (state, action) => {
       const { id } = action.payload;
@@ -24,7 +24,7 @@ const favoriteSlice = createSlice({
     toggleClicked: (state, action) => {
       const productId = action.payload.id; // Log the state for debugging
       state.isClicked[productId] = !state.isClicked[productId];
-      console.log("Updated isClickedMap:", state.isClicked);
+      console.log("Updated isClicked:",(state.isClicked[productId]));
     },
   },
 });
