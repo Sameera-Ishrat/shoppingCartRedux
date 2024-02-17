@@ -72,21 +72,21 @@ const productSlice = createSlice({
       );
       state.amount = state.products.reduce((acc, product) => acc + product.amount, 0);
     },
-    calculateTotal: (state, action) => {
-      let amount = 0;
-      let total = 0;
-      state.products.forEach((product) => {
-        // Check if product.amount is defined before adding to total
-        // if (typeof product.amount === 'number') {
-        amount += product.amount;
-        total += product.amount * product.price;
-        // }
-      });
-      console.log("Updated amount", amount);
-      state.amount = amount;
-      state.total = total;
-      console.log("State after calculation:", state);
-    },
+    // calculateTotal: (state, action) => {
+    //   let amount = 0;
+    //   let total = 0;
+    //   state.products.forEach((product) => {
+    //     // Check if product.amount is defined before adding to total
+    //     // if (typeof product.amount === 'number') {
+    //     amount += product.amount;
+    //     total += product.amount * product.price;
+    //     // }
+    //   });
+    //   console.log("Updated amount", amount);
+    //   state.amount = amount;
+    //   state.total = total;
+    //   console.log("State after calculation:", state);
+    // },
   },
 
   extraReducers: (builder) => {
