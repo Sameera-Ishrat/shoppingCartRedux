@@ -42,6 +42,12 @@ const productSlice = createSlice({
         // state.products.push({...payload,amount:1})
         state.products.push(payload );
       }
+      // Dispatch calculateTotal after updating the cart
+      state.total = state.products.reduce(
+        (acc, product) => acc + product.amount * product.price,
+        0
+      );
+      state.amount = state.products.reduce((acc, product) => acc + product.amount, 0);
     },
     removeItem: (state, { payload }) => {
       const cartItem = state.products.find(
@@ -59,11 +65,12 @@ const productSlice = createSlice({
           );
         }
       }
-      // Recalculate total after updating the cart
+      // Dispatch calculateTotal after updating the cart
       state.total = state.products.reduce(
         (acc, product) => acc + product.amount * product.price,
         0
       );
+      state.amount = state.products.reduce((acc, product) => acc + product.amount, 0);
     },
     calculateTotal: (state, action) => {
       let amount = 0;
@@ -97,9 +104,9 @@ const productSlice = createSlice({
         }));
       })
       .addCase(fetchProducts.rejected, (state, action) => {
-        console.log(action);
+        console.log(action,"ACTION FAILED");
         state.isLoading = false;
-        console.log("Error fetching data", action.errorMessage);
+        console.log("Error fetching data", action.error.message);
       });
   },
 });

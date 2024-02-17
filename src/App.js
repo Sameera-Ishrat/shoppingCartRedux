@@ -20,9 +20,9 @@ function App() {
   const { isLoading, products } = useSelector((state) => state.product);
   const { isCartVisible } = useSelector((state) => state.modal);
 
-  useEffect(() => {
-    dispatch(calculateTotal());
-  }, [dispatch, products]);
+  // useEffect(() => {
+  //   dispatch(calculateTotal());
+  // }, [dispatch, products]);
 
   useEffect(() => {
     dispatch(fetchProducts());
